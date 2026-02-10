@@ -6,9 +6,20 @@
 
 body {
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
-  background-color: #f4f6f8;
-  color: #333;
+  min-height: 100vh;
+  margin: 0;
+
+  background: linear-gradient(
+    135deg,
+    #f8fafc,
+    #eef2ff,
+    #fdf2f8
+  );
+
+  background-attachment: fixed;
+  color: #1f2937;
 }
+
 
 button {
   cursor: pointer;
