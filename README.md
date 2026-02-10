@@ -1,12 +1,3 @@
-Perfect choice 👍
-A **strong README** is what turns a good project into a **hire-me project**.
-
-Below is a **complete, professional, copy-paste ready `README.md`** tailored exactly to **your SkillSwap project** (React + Node + MongoDB + JWT + Render + Vercel style).
-
-You can paste this directly into **GitHub → README.md**.
-
----
-
 # 🚀 SkillSwap – Full Stack Skill Exchange Platform
 
 SkillSwap is a full-stack web application that enables users to exchange skills with others in a peer-to-peer manner. Users can register, log in, post skills they offer or request, browse available skills, and manage their own skill listings securely.
