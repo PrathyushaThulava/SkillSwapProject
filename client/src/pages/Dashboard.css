@@ -1,0 +1,103 @@
+.dashboard {
+  margin-top: 20px;
+}
+
+.section {
+  background: #ffffff;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.section h2 {
+  margin-bottom: 15px;
+  color: #1f2937;
+}
+
+.skill-form input,
+.skill-form textarea,
+.skill-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.skill-form button {
+  background: #10b981;
+  border: none;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.skill-form button:disabled {
+  opacity: 0.6;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.skill-card {
+  background: #f9fafb;
+  padding: 15px;
+  border-radius: 6px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.skill-card h3 {
+  margin-bottom: 5px;
+}
+
+.category {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 12px;
+  color: white;
+}
+
+.badge.offer {
+  background: #2563eb;
+}
+
+.badge.request {
+  background: #f59e0b;
+}
+
+.delete-btn {
+  background: #ef4444;
+  border: none;
+  padding: 6px 10px;
+  color: white;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.muted {
+  color: #6b7280;
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 15px;
+  }
+}

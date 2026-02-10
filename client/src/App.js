@@ -1,26 +1,61 @@
-import { loginUser } from "./services/authService";
+import { useState } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import "./App.css";
+
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+import Dashboard from "./pages/Dashboard";
+import Navbar from "./components/Navbar";
 
 function App() {
-  const testBackend = async () => {
-    try {
-      const res = await loginUser({
-        email: "testuser2@gmail.com",
-        password: "123456",
-      });
-      console.log("Backend response:", res);
-      alert("Backend connected! Check console for token.");
-    } catch (err) {
-      console.error("Error connecting backend:", err);
-      alert("Backend connection failed");
-    }
+  const [loggedIn, setLoggedIn] = useState(
+    Boolean(localStorage.getItem("token"))
+  );
+
+  const logout = () => {
+    localStorage.removeItem("token");
+    setLoggedIn(false);
   };
 
   return (
-    <div style={{ padding: "40px", fontFamily: "Arial" }}>
-      <h1>SkillSwap</h1>
-      <p>Frontend → Backend connection test</p>
-      <button onClick={testBackend}>Test Backend</button>
-    </div>
+    <BrowserRouter>
+      {loggedIn && <Navbar onLogout={logout} />}
+
+      <div className="app-container">
+        <Routes>
+          {/* Public routes */}
+          <Route
+            path="/login"
+            element={
+              loggedIn ? (
+                <Navigate to="/dashboard" />
+              ) : (
+                <LoginPage onLogin={() => setLoggedIn(true)} />
+              )
+            }
+          />
+
+          <Route
+            path="/register"
+            element={loggedIn ? <Navigate to="/dashboard" /> : <RegisterPage />}
+          />
+
+          {/* Protected route */}
+          <Route
+            path="/dashboard"
+            element={
+              loggedIn ? <Dashboard /> : <Navigate to="/login" />
+            }
+          />
+
+          {/* Default route */}
+          <Route
+            path="*"
+            element={<Navigate to={loggedIn ? "/dashboard" : "/login"} />}
+          />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
