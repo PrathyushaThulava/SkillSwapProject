@@ -173,6 +173,3 @@ This project is for educational and portfolio purposes.
 
 ---
 
-
-
-Just say the word 😊
